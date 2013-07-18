@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="charmy.plugin.TeStor"
+   name="Plug-in per charmy"
+   version="1.2.0"
+   provider-name="Fabrizio Facchini">
+
+   <runtime>
+      <library name="Principale.jar"/>
+   </runtime>
+
+	<requires>
+		<import plugin = "charmy.plugin.sequence"  version="2.0.0"/>
+	</requires>
+
+   <extension
+         point="editor">
+      <page
+            name="TEst Sequence generaTOR"
+            class="plugin.TeStor.Principale"
+            id="TeStor.plugin">
+      </page>
+   </extension>
+
+</plugin>

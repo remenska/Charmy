@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+ <!-- dichiarazioni globali -->
+  
+ 
+ 	  <xs:element name="BkColor">
+                 <xs:complexType>
+                      <xs:attribute name="blue" type="xs:integer" use="required"/>
+                      <xs:attribute name="green" type="xs:integer" use="required"/>
+                      <xs:attribute name="red" type="xs:integer" use="required"/>
+                 </xs:complexType>
+      </xs:element> <!-- BkColor -->
+      
+      <xs:element name="Colore">
+                      <xs:complexType>
+                      <xs:attribute name="blue" type="xs:integer" use="required"/>
+                      <xs:attribute name="green" type="xs:integer" use="required"/>
+                      <xs:attribute name="red" type="xs:integer" use="required"/>
+                     </xs:complexType>
+      </xs:element>
+      
+      <xs:element name="Font">
+                 <xs:complexType>
+                   <xs:sequence>
+                    <xs:element ref="Colore"/>
+                   </xs:sequence>
+                      <xs:attribute name="nome" type="xs:string" use="required"/>
+                      <xs:attribute name="size" type="xs:integer" use="required"/>
+                      <xs:attribute name="style" type="xs:integer" use="required"/>
+                 </xs:complexType>
+      </xs:element> <!-- Font -->
+      
+       <xs:element name="Line">
+                 <xs:complexType>
+                   <xs:sequence>
+                    <xs:element ref="Colore"/>
+                   </xs:sequence>
+                      <xs:attribute name="theme" type="xs:integer" use="required"/>
+                      <xs:attribute name="weight" type="xs:integer" use="required"/>
+                 </xs:complexType>
+      </xs:element> <!-- Line -->
+
+ <!-- fine dichiarazioni globali -->
+    
+   <xs:element name="Charmy">
+<xs:complexType>
+ <xs:sequence>
+   
+  <xs:element name="Default">
+    <xs:complexType>
+      <xs:sequence>       
+                
+        <xs:element name="Start">
+          <xs:complexType>
+            <xs:sequence>              
+                <xs:element ref="BkColor"/>
+                <xs:element ref="Font"/>
+                <xs:element ref="Line"/>
+            </xs:sequence>
+             <xs:attribute name="Height" type="xs:integer" use="required"/>
+             <xs:attribute name="Width" type="xs:integer" use="required"/>
+          </xs:complexType>
+        </xs:element> <!-- Start-->
+        
+         <xs:element name="Build">
+          <xs:complexType>
+            <xs:sequence>              
+                <xs:element ref="BkColor"/>
+                <xs:element ref="Font"/>
+                <xs:element ref="Line"/>
+            </xs:sequence>
+             <xs:attribute name="Height" type="xs:integer" use="required"/>
+             <xs:attribute name="Width" type="xs:integer" use="required"/>
+          </xs:complexType>
+        </xs:element> <!-- Build-->
+        
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>   <!-- Default-->
+  
+  <xs:element name="ListaDP">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="ListaThread" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element name="ThreadElement" maxOccurs="unbounded">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+
+ <xs:element name="ListaStato">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ElementoBox" maxOccurs="unbounded">
+          <xs:complexType>
+         <xs:sequence>
+         
+             <xs:element ref="BkColor"/>
+             <xs:element ref="Font"/>                        
+             <xs:element ref="Line"/>
+         
+         </xs:sequence>
+		  <xs:attribute name="Height" type="xs:integer" use="required"/>
+                     <xs:attribute name="TopX" type="xs:integer" use="required"/>
+                       <xs:attribute name="TopY" type="xs:integer" use="required"/>
+                     <xs:attribute name="Width" type="xs:integer" use="required"/>
+                     <xs:attribute name="idref" type="xs:string" use="required"/>
+                   </xs:complexType>
+       </xs:element> <!-- ElementoBox-->
+</xs:sequence>
+</xs:complexType> 	
+</xs:element> <!-- ListaStato-->
+
+
+ <xs:element name="Listamessaggio">
+    <xs:complexType>
+      <xs:sequence>
+      
+      
+       <xs:element name="GraficoLink" maxOccurs="unbounded">
+                 <xs:complexType>
+                    <xs:sequence>
+      					<xs:element ref="BkColor"/>
+                        <xs:element ref="Font"/>
+                        <xs:element ref="Line"/>
+      
+                    </xs:sequence>
+                      <xs:attribute name="idref" type="xs:string" use="required"/>
+                 </xs:complexType>
+                </xs:element>   <!-- GraficoLink  -->
+
+</xs:sequence>
+</xs:complexType> 	
+</xs:element> <!--Listamessaggio-->
+
+
+</xs:sequence>
+<xs:attribute name="nome" type="xs:string" use="required"/>
+</xs:complexType>
+</xs:element>  <!-- ThreadElement-->
+ 
+</xs:sequence>
+ <xs:attribute name="ElementoProcesso" type="xs:string" use="required"/>
+</xs:complexType>
+</xs:element> <!-- ListaThread-->
+
+       
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>  <!-- ListaDP-->
+ </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema> 

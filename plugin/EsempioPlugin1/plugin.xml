@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="charmy.plugin.EsempioPlugin1"
+   name="Plug-in esempio uso file"
+   version="1.0.0"
+   vendor-name="Ezio Di Nisio">
+
+   <runtime>
+      <library name="EsempioPlugin1.jar"/>
+   </runtime>
+<requires>
+		<import plugin = "charmy.plugin.userinterface"  version="1.0.0"/>
+		<import plugin = "charmy.plugin.topology"  version="2.0.0"/>
+
+</requires>
+
+ 
+   <extension
+         point="editor">
+      <page
+            name="Plug-in esempio uso file"
+            class="plugin.EsempioPlugin1.EsempioPlugin1"
+            id="EsempioPlugin1.plugin">
+      </page>
+      
+         <file plugin = "charmy.plugin.EsempioPluginFile" >      
+            <xschema idref= "charmy.plugin.EsempioPluginFile.dati" xschema_file = "file/schemaFileDati.xsd" class = "plugin.EsempioPlugin1.file.MenagementFileDati"/>      
+      </file>  
+       
+       <file plugin = "charmy.plugin.salvastd" >
+      
+      <xschema idref= "charmy.plugin.salvastd.semantica" xschema_file = "file/schemaFileSemantica.xsd" class = "plugin.EsempioPlugin1.file.MenagementFileDati"/>
+     
+      </file> 
+        <!--    -->
+   </extension>   
+   
+  	<extension
+         point="plugin.charmyui.window">
+        <host 
+        	id="plugin.EsempioPlugin1.EsempioPlugin1Window" 
+        	name="Plugin di Esempio" 
+        	class="plugin.EsempioPlugin1.EsempioPlugin1"
+        />
+                       
+	</extension>
+	
+		<extension
+         point="plugin.charmyui.editor">
+        <host
+            name="Esempio Plugin1 Editor"
+            class="plugin.EsempioPlugin1.EsempioPlugin1Editor"
+            id="plugin.EsempioPlugin1.EsempioPlugin1Editor">
+            
+            <host-required id = "plugin.EsempioPlugin1.EsempioPlugin1Window"/>
+        </host>        
+	</extension>
+	
+	
+	<extension
+         point="plugin.charmyui.toolbar">
+        <host
+            name=" Toolbar esempio 1"
+            class="plugin.EsempioPlugin1.toolbar.EsempioToolBar1"
+            id="plugin.EsempioPlugin1.toolbar.EsempioToolBar1">                        
+       <host-required id = "plugin.EsempioPlugin1.EsempioPlugin1Editor"/>
+     
+            <button
+                  name="Inserisci in lista processo - estensione file charmy"
+                  icon="plugin/EsempioPlugin1/icon/process.gif"
+                  class="plugin.EsempioPlugin1.action.ButtonAction1"
+                  id="plugin.EsempioPlugin1.action.ButtonAction1"> 
+            </button>
+            <button
+                  name="Inserisci in nuovo formato file esempio"
+                  icon="plugin/EsempioPlugin1/icon/process.gif"
+                  class="plugin.EsempioPlugin1.action.ButtonAction2"
+                  id="plugin.EsempioPlugin1.action.ButtonAction2"> 
+            </button>
+  			
+           
+           
+        </host>
+    </extension>
+	
+
+</plugin>

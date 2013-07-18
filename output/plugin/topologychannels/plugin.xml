@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="charmy.plugin.topologychannels"
+   name="Plug-in core per charmy"
+   version="1.0.0"
+   vendor-name="pp">
+
+   <runtime>
+   		<library name="TopologyWindow.jar"/>
+   </runtime>
+   
+<requires>
+		<import plugin = "charmy.plugin.userinterface"  version="1.0.0"/>
+		<import plugin = "charmy.plugin.topology"  version="2.0.0"/>
+</requires>
+
+ 
+   <extension
+         point="editor">
+      <page
+            name="Topology Channels"
+            class="plugin.topologychannels.TopologyWindow"
+            id="topologychan.plugin">
+     </page>
+                 
+   </extension>
+   
+   
+  <extension
+         point="plugin.charmyui.window">
+       <host 
+        	id="plugin.topologychannels.topologywindow" 
+        	name="Topology Channels" 
+        	class="plugin.topologychannels.TopologyWindow"
+       />
+                       
+</extension>
+	
+	
+	<extension
+         point="plugin.charmyui.editor">
+        <host
+            name="Topology Editor"
+            class="plugin.topologychannels.TopologyEditor"
+            id="plugin.topologychannels.topologyeditor">
+            
+            <host-required id = "plugin.topologychannels.topologywindow"/>
+        </host>        
+	</extension>
+	
+	<extension
+         point="plugin.charmyui.toolbar">
+        <host
+            name="Topology Editor Toolbar"
+            class="plugin.topologychannels.toolbar.TopologyToolBar"
+            id="plugin.topologychannels.toolbar.topologytoolbar">                        
+            <host-required id = "plugin.topologychannels.topologyeditor"/>
+
+            <button
+                  name="Compute Links"
+                  icon="plugin/topologychannels/icon/process.gif"
+                  class="plugin.topologychannels.action.ComputeItemAction"
+                  id="plugin.topologychannels.action.ComputeItemAction"> 
+            </button>
+
+            <button
+                  name="Save Jpeg Image"
+                  icon="plugin/topologychannels/icon/imgjpeg.gif"
+                  class="plugin.topologychannels.action.ImageItemAction"
+                  id="plugin.topologychannels.action.ImageItemAction"> 
+            </button>
+            
+             <button
+                  name="Topology Panel Help"
+                  icon="plugin/topologychannels/icon/helpclass.gif"
+                  class="plugin.topologychannels.action.menuhelp.TopologyItemAction"
+                  id="plugin.topologychannels.action.menuhelp.TopologyItemAction"> 
+            </button>
+           
+        </host>
+    </extension>
+
+</plugin>

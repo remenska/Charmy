@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="Charmy">
+<xs:complexType>
+ <xs:sequence>
+ 
+     
+  <xs:element name="Topology">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ListaProcesso">
+          <xs:complexType>
+             <xs:attribute name="attributoEsempio" type="xs:string" />    
+          </xs:complexType>
+        </xs:element> 
+
+
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+   </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema> 

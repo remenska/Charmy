@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="charmy.plugin.BA"
+   name="Plug-in per charmy"
+   version="2.0.0">
+
+   <runtime>
+      <library name="BAWindow.jar"/>
+   </runtime>
+<requires>
+		<import plugin = "charmy.plugin.topology" version="2.0.0"/>
+		<import plugin = "charmy.plugin.state" version="2.0.0"/>
+		<import plugin = "charmy.plugin.sequence" version="2.0.0"/>
+	</requires>
+   <extension
+         point="editor">
+      <page
+            name="Specifiche BA"
+            class="plugin.ba.BAWindow"
+            id="BA.plugin">
+      </page>
+      
+       <file plugin = "charmy.plugin.salvastd" >
+      
+         <xschema idref= "charmy.plugin.salvastd.semantica" xschema_file = "file/schemaFileSemantica.xsd" class = "plugin.ba.file.MenagementFile"/>
+        
+      </file>
+      
+   </extension>
+
+</plugin>

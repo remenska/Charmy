@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+ <!-- dichiarazioni globali -->
+
+ 	  <xs:element name="BkColor">
+                 <xs:complexType>
+                      <xs:attribute name="blue" type="xs:integer" use="required"/>
+                      <xs:attribute name="green" type="xs:integer" use="required"/>
+                      <xs:attribute name="red" type="xs:integer" use="required"/>
+                 </xs:complexType>
+      </xs:element> <!-- BkColor -->
+      
+      <xs:element name="Colore">
+                      <xs:complexType>
+                      <xs:attribute name="blue" type="xs:integer" use="required"/>
+                      <xs:attribute name="green" type="xs:integer" use="required"/>
+                      <xs:attribute name="red" type="xs:integer" use="required"/>
+                     </xs:complexType>
+      </xs:element>
+      
+      <xs:element name="Font">
+                 <xs:complexType>
+                   <xs:sequence>
+                    <xs:element ref="Colore"/>
+                   </xs:sequence>
+                      <xs:attribute name="nome" type="xs:string" use="required"/>
+                      <xs:attribute name="size" type="xs:integer" use="required"/>
+                      <xs:attribute name="style" type="xs:integer" use="required"/>
+                 </xs:complexType>
+      </xs:element> <!-- Font -->
+      
+       <xs:element name="Line">
+                 <xs:complexType>
+                   <xs:sequence>
+                    <xs:element ref="Colore"/>
+                   </xs:sequence>
+                      <xs:attribute name="theme" type="xs:integer" use="required"/>
+                      <xs:attribute name="weight" type="xs:integer" use="required"/>
+                 </xs:complexType>
+      </xs:element> <!-- Line -->
+
+  
+      
+
+
+ <!-- fine dichiarazioni globali -->
+    
+        <xs:element name="Charmy">
+<xs:complexType>
+ <xs:sequence>
+ 
+  <xs:element name="Default">
+    <xs:complexType>
+      <xs:sequence>         
+        
+         <xs:element name="Class">
+          <xs:complexType>
+            <xs:sequence>              
+                <xs:element ref="BkColor"/>
+                <xs:element ref="Font"/>
+                <xs:element ref="Line"/>
+            </xs:sequence>
+             <xs:attribute name="Height" type="xs:integer" use="required"/>
+             <xs:attribute name="Width" type="xs:integer" use="required"/>
+          </xs:complexType>
+        </xs:element> <!-- Class-->
+        
+        
+         <xs:element name="Link">
+          <xs:complexType>
+            <xs:sequence>              
+                <xs:element ref="Font"/>
+                <xs:element ref="Line"/>
+            </xs:sequence>
+           </xs:complexType>
+        </xs:element> <!-- Link-->
+         
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>   <!-- Default-->
+  
+  <xs:element name="ListaDS">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="SequenceElement" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element name="ListaClasse">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+
+  <xs:element name="ElementoBox" maxOccurs="unbounded">
+          <xs:complexType>
+         <xs:sequence>
+         
+             <xs:element ref="BkColor"/>
+             <xs:element ref="Font"/>                        
+             <xs:element ref="Line"/>
+         
+         </xs:sequence>
+		  <xs:attribute name="Height" type="xs:integer" use="required"/>
+                     <xs:attribute name="TopX" type="xs:integer" use="required"/>
+                       <xs:attribute name="TopY" type="xs:integer" use="required"/>
+                     <xs:attribute name="Width" type="xs:integer" use="required"/>
+                     <xs:attribute name="idref" type="xs:string" use="required"/>
+                   </xs:complexType>
+       </xs:element> <!-- ElementoBox-->
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>  <!-- ListaClasse-->
+
+
+ <xs:element name="ListaTime">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+
+ <xs:element name="ElementoTime" maxOccurs="unbounded">
+    <xs:complexType>
+       <xs:attribute name="id" type="xs:string" use="required"/>
+ <xs:attribute name="lineNum" type="xs:integer" use="required"/>
+ <xs:attribute name="lineVisible" type="xs:boolean" use="required"/>
+ <xs:attribute name="maxY" type="xs:integer" use="required"/>
+ <xs:attribute name="minY" type="xs:integer" use="required"/>
+ <xs:attribute name="stringVisible" type="xs:boolean" use="required"/>
+ 
+</xs:complexType> 	
+</xs:element> <!-- ElementoTime-->
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>  <!-- ListaTime-->
+
+
+
+ <xs:element name="ListaSeqLink">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+
+ <xs:element name="GraficoLink" maxOccurs="unbounded">
+                 <xs:complexType>
+                    <xs:sequence>
+      					<xs:element ref="BkColor"/>
+                        <xs:element ref="Font"/>
+                        <xs:element ref="Line"/>
+      
+                    </xs:sequence>
+                      <xs:attribute name="idref" type="xs:string" use="required"/>
+                 </xs:complexType>
+                </xs:element>   <!-- GraficoLink  -->
+
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>  <!-- ListaSeqLink-->
+
+ 
+ 
+ <xs:element name="ListaConstraint">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+
+ <xs:element name="ElementoConstraint" maxOccurs="unbounded">
+                 <xs:complexType>
+                   <xs:attribute name="id" type="xs:string" use="required"/>
+                    <xs:attribute name="type" type="xs:integer" use="required"/>
+               
+                 </xs:complexType>
+                 
+                </xs:element>   <!-- ElementoConstraint  -->
+
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>  <!-- ListaConstraint-->
+ 
+ 
+  
+ <xs:element name="ListaSim">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+
+ <xs:element name="ElementoSim" maxOccurs="unbounded">
+                 <xs:complexType>
+                   <xs:attribute name="id" type="xs:string" use="required"/>
+                  
+                 </xs:complexType>
+                 
+                </xs:element>   <!-- ElementoSim  -->
+
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>  <!-- ListaSim-->
+ 
+ 
+  <xs:element name="ListaParallel">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+
+ <xs:element name="ElementoParallel" maxOccurs="unbounded">
+                 <xs:complexType>
+                 
+                   <xs:attribute name="id" type="xs:string" use="required"/>
+                  
+                 </xs:complexType>
+                 
+                </xs:element>   <!-- ElementoParallel -->
+
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>  <!-- ListaParallel-->
+ 
+ 
+  
+  <xs:element name="ListaLoop">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+
+ <xs:element name="ElementoLoop" maxOccurs="unbounded">
+                 <xs:complexType>
+                   <xs:attribute name="id" type="xs:string" use="required"/>
+                  
+                 </xs:complexType>
+                 
+                </xs:element>   <!-- ElementoLoop  -->
+
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>  <!-- ListaLoop-->
+ 
+ 
+</xs:sequence>
+ <xs:attribute name="id" type="xs:string" use="required"/>
+ <xs:attribute name="nome" type="xs:string" use="required"/>
+
+</xs:complexType>
+</xs:element> <!-- SequenceElement-->
+
+       
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>  <!-- ListaDS-->
+    </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+</xs:schema> 

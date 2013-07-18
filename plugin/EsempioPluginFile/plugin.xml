@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="charmy.plugin.EsempioPluginFile"
+   name="Plug-in core per charmy"
+   version="1.0.0"
+   vendor-name="Ezio">
+
+   <runtime>
+      <library name="EsempioPluginFile.jar"/>    
+           
+   </runtime>
+ 
+   <extension
+		 point="file">
+	  <objectContribution
+			objectClass="charmy.init.resources.IFile"
+			nameFilter="*.prova"
+			id="charmy.contribution">
+		 <action
+			   label="Modello di Esempio"
+			   class="plugin.EsempioPluginFile.EsempioPluginFile"
+			   tag_root_xml = "FileEsempio">
+		 </action>
+		 <xml_model id = "charmy.plugin.EsempioPluginFile.dati" name= "dati.xml"/>
+		  </objectContribution>
+   </extension>
+
+</plugin>

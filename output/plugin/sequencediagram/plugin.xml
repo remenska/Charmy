@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="charmy.plugin.sequence"
+   name="Plug-in core per charmy"
+   version="2.0.0"
+   vendor-name="Michele Stoduto">
+
+   <runtime>
+      <library name="SequenceWindow.jar"/>
+   </runtime>
+   
+<requires>
+		<import plugin = "charmy.plugin.state"  version="2.0.0"/>
+ </requires>
+ 
+   <extension
+         point="editor">
+      <page
+            name="Sequence Editor"
+            class="plugin.sequencediagram.SequenceWindow"
+            id="sequence.plugin">
+      </page>
+      
+     <file plugin = "charmy.plugin.salvastd" >
+      
+      <xschema idref= "charmy.plugin.salvastd.semantica" xschema_file = "file/schemaFileSemantica.xsd" class = "plugin.sequencediagram.file.MenagementFileSemantica"/>
+     <!--  --> <xschema idref= "charmy.plugin.salvastd.grafica" xschema_file = "file/schemaFileGrafica.xsd" class = "plugin.sequencediagram.file.MenagementFileGrafica"/>  
+      
+      </file>
+      
+   </extension>
+
+</plugin>

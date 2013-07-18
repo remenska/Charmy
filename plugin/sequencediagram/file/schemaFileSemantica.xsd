@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Charmy">
+<xs:complexType>
+ <xs:sequence>
+
+<xs:element name="Identificatori">
+    <xs:complexType>
+     <xs:attribute name="sequence" type="xs:integer" use="required"/>
+        <xs:attribute name="time" type="xs:integer" use="required"/>
+             <xs:attribute name="constraint" type="xs:integer" use="required"/>
+        <xs:attribute name="sim" type="xs:integer" use="required"/>
+         <xs:attribute name="parallel" type="xs:integer" use="required"/>
+         <xs:attribute name="loop" type="xs:integer" use="required"/>
+             			  
+    </xs:complexType>
+    </xs:element>
+    
+  <xs:element name="ListaDS">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="SequenceElement" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element name="ListaClasse">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+
+ <xs:element name="ElementoClasse" maxOccurs="unbounded">
+    <xs:complexType>
+       <xs:attribute name="id" type="xs:string" use="required"/>
+ <xs:attribute name="nome" type="xs:string" use="required"/>
+</xs:complexType> 	
+</xs:element> <!-- ElementoClasse-->
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>  <!-- ListaClasse-->
+
+
+ <xs:element name="ListaTime">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+
+ <xs:element name="ElementoTime" maxOccurs="unbounded">
+    <xs:complexType>
+       <xs:attribute name="id" type="xs:string" use="required"/>
+ <xs:attribute name="time" type="xs:integer" use="required"/>
+</xs:complexType> 	
+</xs:element> <!-- ElementoTime-->
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>  <!-- ListaTime-->
+
+
+
+ <xs:element name="ListaSeqLink">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+ <xs:element name="ElementoSeqLink" maxOccurs="unbounded">
+    <xs:complexType>
+<xs:sequence>
+
+ <xs:element name="ElementoSeqLinkPrec">
+    <xs:complexType>
+       <xs:attribute name="idref" type="xs:string" use="required"/>
+ </xs:complexType> 	
+</xs:element> <!-- ElementoSeqLinkPrec-->
+
+ <xs:element name="ElementoClasseFrom">
+    <xs:complexType>
+       <xs:attribute name="idref" type="xs:string" use="required"/>
+ </xs:complexType> 	
+</xs:element> <!-- ElementoClasseFrom -->
+
+ <xs:element name="ElementoClasseTo">
+    <xs:complexType>
+       <xs:attribute name="idref" type="xs:string" use="required"/>
+ </xs:complexType> 	
+</xs:element> <!-- ElementoClasseTo -->
+
+ <xs:element name="ElementoTimeFrom">
+    <xs:complexType>
+       <xs:attribute name="idref" type="xs:string" use="required"/>
+ </xs:complexType> 	
+</xs:element> <!-- ElementoTimeFrom -->
+
+ <xs:element name="ElementoTimeTo">
+    <xs:complexType>
+       <xs:attribute name="idref" type="xs:string" use="required"/>
+ </xs:complexType> 	
+</xs:element> <!-- ElementoTimeTo -->
+
+</xs:sequence>
+       <xs:attribute name="flussodiretto" type="xs:boolean" use="required"/>
+       <xs:attribute name="fromPos" type="xs:integer" use="required"/>
+      <xs:attribute name="id" type="xs:string" use="required"/>
+       <xs:attribute name="loop" type="xs:boolean" use="required"/>
+      <xs:attribute name="msgRRF" type="xs:integer" use="required"/>
+       <xs:attribute name="nome" type="xs:integer" use="required"/>
+      <xs:attribute name="strict" type="xs:boolean" use="required"/>
+      <xs:attribute name="tipo" type="xs:integer" use="required"/>
+       <xs:attribute name="toPos" type="xs:integer" use="required"/>
+
+</xs:complexType> 	
+</xs:element> <!-- ElementoSeqLink-->
+
+</xs:sequence>
+</xs:complexType>
+</xs:element>  <!-- ListaSeqLink-->
+
+
+
+<xs:element name="ListaConstraint">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+           		 
+           	<xs:element name="ElementoConstraint" maxOccurs="unbounded">
+    <xs:complexType>
+<xs:sequence>
+
+    	<xs:element name="listaLinkConstraint">
+    <xs:complexType>
+<xs:sequence>
+
+<xs:element name="Link" maxOccurs="unbounded">
+    <xs:complexType>
+    <xs:attribute name="idLink" type="xs:string" use="required"/>
+  
+    </xs:complexType>
+  </xs:element>  <!-- Link -->
+  
+ </xs:sequence>
+    </xs:complexType>
+  </xs:element>  <!-- listaLinkConstraint-->
+        		 
+
+ </xs:sequence>
+ 
+  <xs:attribute name="ElementoSeqLinkFrom" type="xs:string" use="required"/>
+  <xs:attribute name="constraintExpression" type="xs:string" use="required"/>
+  <xs:attribute name="id" type="xs:string" use="required"/>
+  <xs:attribute name="nome" type="xs:string" use="required"/>
+  
+    </xs:complexType>
+  </xs:element>  <!-- ElementoConstraint-->
+        		 
+     </xs:sequence>
+    </xs:complexType>
+  </xs:element>  <!-- ListaConstraint-->
+  
+  
+  
+  
+  <xs:element name="ListaParallel">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+           		 
+           	<xs:element name="ElementoParallel" maxOccurs="unbounded">
+    <xs:complexType>
+<xs:sequence>
+
+    	<xs:element name="listaLinkParallel">
+    <xs:complexType>
+<xs:sequence>
+
+<xs:element name="Link" maxOccurs="unbounded">
+    <xs:complexType>
+    <xs:attribute name="idLink" type="xs:string" use="required"/>
+  
+    </xs:complexType>
+  </xs:element>  <!-- Link -->
+  
+ </xs:sequence>
+    </xs:complexType>
+  </xs:element>  <!-- listaLinkParallel-->
+        		 
+
+ </xs:sequence>
+ 
+   <xs:attribute name="id" type="xs:string" use="required"/>
+  <xs:attribute name="nome" type="xs:string" use="required"/>
+  <xs:attribute name="point_start_middle" type="xs:integer" use="required"/>
+  
+    </xs:complexType>
+  </xs:element>  <!-- ElementoParallel-->
+        		 
+     </xs:sequence>
+    </xs:complexType>
+  </xs:element>  <!-- ListaParallel-->
+  
+  
+  
+    <xs:element name="ListaSim">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+           		 
+           	<xs:element name="ElementoSim" maxOccurs="unbounded">
+    <xs:complexType>
+<xs:sequence>
+
+    	<xs:element name="listaLinkSim">
+    <xs:complexType>
+<xs:sequence>
+
+<xs:element name="Link" maxOccurs="unbounded">
+    <xs:complexType>
+    <xs:attribute name="idLink" type="xs:string" use="required"/>
+  
+    </xs:complexType>
+  </xs:element>  <!-- Link -->
+  
+ </xs:sequence>
+    </xs:complexType>
+  </xs:element>  <!-- listaLinkSim-->
+        		 
+
+ </xs:sequence>
+ 
+   <xs:attribute name="id" type="xs:string" use="required"/>
+  <xs:attribute name="nome" type="xs:string" use="required"/>
+  
+    </xs:complexType>
+  </xs:element>  <!-- ElementoSim-->
+        		 
+     </xs:sequence>
+    </xs:complexType>
+  </xs:element>  <!-- ListaSim-->
+  
+  
+  
+  
+  
+    <xs:element name="ListaLoop">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+           		 
+           	<xs:element name="ElementoLoop" maxOccurs="unbounded">
+    <xs:complexType>
+<xs:sequence>
+
+    	<xs:element name="listaLinkLoop">
+    <xs:complexType>
+<xs:sequence>
+
+<xs:element name="Link" maxOccurs="unbounded">
+    <xs:complexType>
+    <xs:attribute name="idLink" type="xs:string" use="required"/>
+  
+    </xs:complexType>
+  </xs:element>  <!-- Link -->
+  
+ </xs:sequence>
+    </xs:complexType>
+  </xs:element>  <!-- listaLinkLoop-->
+        		 
+
+ </xs:sequence>
+ 
+   <xs:attribute name="id" type="xs:string" use="required"/>
+  <xs:attribute name="min" type="xs:integer" use="required"/>
+    <xs:attribute name="max" type="xs:integer" use="required"/>
+    
+    </xs:complexType>
+  </xs:element>  <!-- ElementoLoop-->
+        		 
+     </xs:sequence>
+    </xs:complexType>
+  </xs:element>  <!-- ListaLoop-->
+  
+  
+  
+  
+ 
+</xs:sequence>
+ <xs:attribute name="id" type="xs:string" use="required"/>
+ <xs:attribute name="nome" type="xs:string" use="required"/>
+
+</xs:complexType>
+</xs:element> <!-- SequenceElement-->
+
+       
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>  <!-- ListaDS-->
+</xs:sequence>
+    </xs:complexType>
+  </xs:element> 
+
+</xs:schema> 

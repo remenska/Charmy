@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="charmy.charmy"
+      label="Charmy Framework"
+      version="1.0.0"
+      provider-name="lotta"
+      image=".jpg">
+      
+      <default value="true" />
+             
+      <plugin
+         id="charmy.plugin.topology"
+         version="2.0.0"/>
+                  
+       <plugin
+         id="charmy.plugin.state"
+         version="2.0.0"/>
+         
+        <plugin
+         id="charmy.plugin.sequence"
+         version="2.0.0"/>  
+         
+        <plugin
+         id="charmy.plugin.promela"
+         version="2.0.0"/> 
+         
+         <plugin
+         id="charmy.plugin.BA"
+         version="2.0.0"/> 
+         
+         <plugin
+         id="charmy.plugin.topologychannels"
+         version="1.0.0"/>
+         
+         <plugin
+         id="charmy.plugin.salvastd"
+         version="2.0.0"/>          
+         
+         
+</feature>

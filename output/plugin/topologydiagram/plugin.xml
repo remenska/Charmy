@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="charmy.plugin.topology"
+   name="Plug-in core per charmy"
+   version="2.0.0"
+   vendor-name="Michele Stoduto">
+
+   <runtime>
+      <library name="TopologyWindow.jar"/>
+      
+   </runtime>
+   
+<requires>
+		<import plugin = "charmy.plugin.userinterface"  version="1.0.0"/>
+		
+</requires>
+
+ 
+   <extension
+         point="editor">
+      <page
+            name="Topology Editor"
+            class="plugin.topologydiagram.TopologyWindow"
+            id="topology.plugin">
+      </page>
+      
+      <file plugin = "charmy.plugin.salvastd" >
+      
+         <xschema idref= "charmy.plugin.salvastd.semantica" xschema_file = "file/schemaFileSemantica.xsd" class = "plugin.topologydiagram.file.MenagementFileSemantica"/>
+         <xschema idref= "charmy.plugin.salvastd.grafica" xschema_file = "file/schemaFileGrafica.xsd" class = "plugin.topologydiagram.file.MenagementFileGrafica"/>  
+      
+      </file>
+           
+   </extension>
+   
+   
+  	<extension
+         point="plugin.charmyui.window">
+        <host 
+        	id="plugin.topologydiagram.topologywindow" 
+        	name="Topology Window" 
+        	class="plugin.topologydiagram.TopologyWindow"
+        />
+                       
+	</extension>
+	
+	
+	<extension
+         point="plugin.charmyui.editor">
+        <host
+            name="Topology Editor"
+            class="plugin.topologydiagram.TopologyEditor"
+            id="plugin.topologydiagram.topologyeditor">
+            
+            <host-required id = "plugin.topologydiagram.topologywindow"/>
+        </host>        
+	</extension>
+	
+	<extension
+         point="plugin.charmyui.toolbar">
+        <host
+            name="Topology Editor Toolbar"
+            class="plugin.topologydiagram.toolbar.TopologyToolBar"
+            id="plugin.topologydiagram.toolbar.topologytoolbar">                        
+            <host-required id = "plugin.topologydiagram.topologyeditor"/>
+            
+            <button
+                  name="Ready"
+                  icon="plugin/topologydiagram/icon/ready.gif"
+                  class="plugin.topologydiagram.action.ReadyButtonAction"
+                  id="plugin.topologydiagram.action.ReadyButtonAction"> 
+            </button>
+            <button
+                  name="Simple Process"
+                  icon="/home/daniela/sw/charmy2.0Beta_source/plugin/topologydiagram/icon/process.gif"
+                  class="plugin.topologydiagram.action.ProcessTopologyButtonAction"
+                  id="plugin.topologydiagram.action.ProcessTopologyButtonAction"> 
+            </button>
+  			
+            
+			<button
+                  name="Store Process"
+                  icon="plugin/topologydiagram/icon/store.gif"
+                  class="plugin.topologydiagram.action.StoreTopologyButtonAction"
+                  id="plugin.topologydiagram.action.StoreTopologyButtonAction"> 
+            </button>
+            
+            <button
+                  name="Dummy Process"
+                  icon="plugin/topologydiagram/icon/dummy.gif"
+                  class="plugin.topologydiagram.action.DummyTopologyButtonAction"
+                  id="plugin.topologydiagram.action.DummyTopologyButtonAction"> 
+            </button>
+            
+            <button
+                  name="Simple Channel"
+                  icon="plugin/topologydiagram/icon/channel.gif"
+                  class="plugin.topologydiagram.action.ChannelTopologyButtonAction"
+                  id="plugin.topologydiagram.action.ChannelTopologyButtonAction"> 
+            </button>
+            
+            <button
+                  name="Save Jpeg Image"
+                  icon="plugin/topologydiagram/icon/imgjpeg.gif"
+                  class="plugin.topologydiagram.action.ImageItemAction"
+                  id="plugin.topologydiagram.action.ImageItemAction"> 
+            </button>
+            
+             <button
+                  name="Topology Panel Help"
+                  icon="plugin/topologydiagram/icon/helpclass.gif"
+                  class="plugin.topologydiagram.action.menuhelp.TopologyItemAction"
+                  id="plugin.topologydiagram.action.menuhelp.TopologyItemAction"> 
+            </button>
+           
+        </host>
+    </extension>
+
+</plugin>

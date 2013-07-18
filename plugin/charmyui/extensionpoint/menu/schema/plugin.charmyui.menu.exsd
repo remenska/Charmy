@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE targetNamespace="charmy.plugin.userinterface.plugin.charmyui" 
+<attribute name="point" type="string" use="required">            
+         </attribute>
+         
+           
+         -->
+<schema xmlns = "http://www.w3.org/2001/XMLSchema">
+
+<element name="plugin">
+  <complexType>  
+  <simpleContent>
+   <attribute name="id" use="required">
+   </attribute>
+   <attribute name="name" use="required">
+   </attribute>
+   <attribute name="version" use="required">
+   </attribute>
+   <attribute name="vendor-name" use="required">
+   </attribute>
+   
+   
+         <sequence>
+        
+         
+         
+         <element name="extension">
+  <complexType>
+  
+         <sequence>
+                   
+         </sequence>
+</complexType>
+</element>
+
+</sequence>
+</complexType>
+</element>
+
+
+
+<!-- <complexType>
+<sequence>
+   <element name="extension">
+      <complexType>
+         <sequence>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>         
+      </complexType>
+   </element>
+   </sequence>
+   </complexType>
+</element> -->
+
+</schema>

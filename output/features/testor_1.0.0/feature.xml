@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="charmy.testor"
+      label="Testor Framework"
+      version="1.0.0"
+      provider-name="lotta"
+      image=".jpg">
+      
+  <default value="false" />
+  
+	<plugin
+         id="charmy.plugin.TeStor"
+         version="1.1.0"/>      
+     
+         
+          <plugin
+         id="charmy.plugin.salvastd"
+         version="2.0.0"/> 
+         <plugin
+         id="charmy.plugin.topologychannel"
+         version="1.0.0"/>
+</feature>

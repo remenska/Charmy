@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="charmy.plugin.salvastd"
+   name="Plug-in core per charmy"
+   version="2.0.0"
+   vendor-name="Michele Stoduto">
+
+   <runtime>
+      <library name="CharmyFile.jar"/>    
+            
+   </runtime>
+
+ 
+   <extension
+		 point="file">
+	  <objectContribution
+			objectClass="charmy.init.resources.IFile"
+			nameFilter="*.charmy"
+			id="charmy.contribution">
+		 <action
+			   label="Charmy Architecture"
+			   class="plugin.charmyfile.CharmyFile"
+			   tag_root_xml = "Charmy">
+		 </action>
+		 <xml_model id = "charmy.plugin.salvastd.semantica" name= "semantica.xml"/>
+		 <xml_model id = "charmy.plugin.salvastd.grafica" name= "grafica.xml" /> 
+	  </objectContribution>
+   </extension>
+
+</plugin>

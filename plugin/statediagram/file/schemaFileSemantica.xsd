@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <xs:element name="Charmy">
+<xs:complexType>
+ <xs:sequence>
+ 
+  <xs:element name="ListaDP">
+    <xs:complexType>
+      <xs:sequence>
+
+        <xs:element name="ListaThread" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+
+              <xs:element name="ThreadElement" maxOccurs="unbounded">
+           	    <xs:complexType>			
+           		 <xs:sequence>
+
+ <xs:element name="ListaStato">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ElementoStato" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+            <xs:element name="OnEntryCode"  type="xs:string" />
+            <xs:element name="OnExitCode"   type="xs:string" />
+              </xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required"/>
+		<xs:attribute name="nome" type="xs:string" use="required"/>
+		<xs:attribute name="tipo" type="xs:integer" use="required"/>
+          </xs:complexType>
+       </xs:element> 
+</xs:sequence>
+</xs:complexType> 	
+</xs:element> <!-- ListaStato-->
+
+
+ <xs:element name="Listamessaggio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ElementoMessaggio" maxOccurs="unbounded">
+          <xs:complexType>		
+		<xs:sequence>
+
+              <xs:element name="ElementoStatoFrom">
+                 <xs:complexType>
+			<xs:attribute name="idref" type="xs:string" use="required"/>
+
+                 </xs:complexType> 	
+              </xs:element> 
+		<xs:element name="ElementoStatoTo"> 
+                 <xs:complexType>
+			<xs:attribute name="idref" type="xs:string" use="required"/>
+
+                 </xs:complexType> 	
+              </xs:element> 
+              <xs:element name="Parametri">
+                 <xs:complexType>
+					<xs:sequence>
+					  <xs:element name="Parametro" maxOccurs="unbounded" type="xs:string"/>
+					
+					</xs:sequence>
+                 </xs:complexType> 	
+              </xs:element> <!--Parametri-->
+
+  <xs:element name="Guard" type="xs:string"/>
+ <xs:element name="Operations" type="xs:string"/>
+ 
+ 
+		</xs:sequence>
+		<xs:attribute name="flussodiretto" type="xs:boolean" use="required"/>
+		<xs:attribute name="id" type="xs:string" use="required"/>
+		<xs:attribute name="nome" type="xs:string" use="required"/>
+		<xs:attribute name="rff" type="xs:integer" use="required"/>
+		<xs:attribute name="sendReceive" type="xs:integer" use="required"/>
+		<xs:attribute name="tipo" type="xs:integer" use="required"/>
+          </xs:complexType>
+       </xs:element> <!--ElementoMessaggio-->
+
+
+</xs:sequence>
+</xs:complexType> 	
+</xs:element> <!--Listamessaggio-->
+
+
+</xs:sequence>
+<xs:attribute name="nome" type="xs:string" use="required"/>
+<xs:attribute name="numStato" type="xs:integer" use="required"/>
+</xs:complexType>
+</xs:element>  <!-- ThreadElement-->
+ 
+</xs:sequence>
+ <xs:attribute name="ElementoProcesso" type="xs:string" use="required"/>
+</xs:complexType>
+</xs:element> <!-- ListaThread-->
+
+       
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>  <!-- ListaDP-->
+ </xs:sequence>
+    </xs:complexType>
+  </xs:element> 
+
+</xs:schema> 

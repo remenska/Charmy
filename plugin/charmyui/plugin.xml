@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="charmy.plugin.userinterface"
+   name="Charmy User Interface"
+   version="1.0.0"
+   vendor-name="Ezio Di Nisio">
+
+   <runtime>
+      <library name="UIPlugin.jar"/>
+   </runtime>
+   
+     
+   <extension-point id="plugin.charmyui.window" name="Main Panel Plugin" class="plugin.charmyui.extensionpoint.window.ExtensionPointWindow" multiplicity="1">
+   </extension-point>
+
+   <extension-point id="plugin.charmyui.editor" name="Editor grafico" class="plugin.charmyui.extensionpoint.editor.ExtensionPointEditor" multiplicity="more">
+   		<dependences>
+   			<extensionpoint-required id ="plugin.charmyui.window"/>
+   		</dependences>
+   </extension-point>
+   
+   <extension-point id="plugin.charmyui.toolbar" name="Generic Toolbar" class="plugin.charmyui.extensionpoint.toolbar.ExtensionPointToolbar" multiplicity="more">
+   		<dependences>
+   			<extensionpoint-required id ="plugin.charmyui.editor"/>
+   		</dependences>
+   </extension-point>
+ 
+   <extension
+         point="editor">
+      <page
+            name="Charmy UI - WorkPanel generale"
+            class="plugin.charmyui.UIPlugin"
+            id="plugin.charmyui.userinterface">
+      </page>
+   </extension>
+   
+   
+	
+	
+ 
+</plugin>

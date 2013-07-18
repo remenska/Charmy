@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="Charmy">
+<xs:complexType>
+ <xs:sequence>
+ 
+ 
+<xs:element name="Identificatori">
+    <xs:complexType>
+     <xs:attribute name="canaleMessaggio" type="xs:integer" use="required"/>
+        <xs:attribute name="processoStato" type="xs:integer" use="required"/>
+          			  
+    </xs:complexType>
+    </xs:element>
+    
+  <xs:element name="Topology">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ListaProcesso">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ElementoProcesso" maxOccurs="unbounded">
+           	    <xs:complexType>
+           		 
+           		     <xs:attribute name="appartenenza" use="required">
+                       <xs:simpleType>
+                         <xs:restriction base="xs:nonNegativeInteger">
+                         
+                             <xs:maxInclusive value="1"/>
+                         
+                         </xs:restriction>
+           		       </xs:simpleType>
+           			 </xs:attribute> 
+           			 
+           			   <xs:attribute name="dummy" type="xs:boolean" use="required"/>
+                       <xs:attribute name="id" type="xs:string" use="required"/>
+                       
+           			<xs:attribute name="modality" use="required">
+                       <xs:simpleType>
+                         <xs:restriction base="xs:nonNegativeInteger">
+                         
+                             <xs:maxInclusive value="1"/>
+                         
+                         </xs:restriction>
+           		       </xs:simpleType>
+           			 </xs:attribute>
+           			 
+           			  <xs:attribute name="nome" type="xs:string" use="required"/>
+           			  
+           			  <xs:attribute name="tipo" type="xs:integer" use="required"/>
+           			 
+           		</xs:complexType>
+          	  </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element> 
+
+
+<xs:element name="ListaCanale">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ElementoCanale" maxOccurs="unbounded">
+           	    <xs:complexType>
+           		 <xs:sequence>
+           		  <xs:element name="ElementoProcessoFrom" >
+           	    <xs:complexType>
+           	     <xs:attribute name="idref" type="xs:string" use="required"/>
+           		 </xs:complexType>
+           		 </xs:element> 
+           		  <xs:element name="ElementoProcessoTo" >
+           	    <xs:complexType>
+           	     <xs:attribute name="idref" type="xs:string" use="required"/>
+           		 </xs:complexType>
+           		 </xs:element>
+           		 
+           		  </xs:sequence>
+ <xs:attribute name="flussodiretto" type="xs:boolean" use="required"/>
+<xs:attribute name="id" type="xs:string" use="required"/>
+
+<xs:attribute name="modality" use="required">
+                       <xs:simpleType>
+                         <xs:restriction base="xs:nonNegativeInteger">
+                         
+                             <xs:maxInclusive value="1"/>
+                         
+                         </xs:restriction>
+           		       </xs:simpleType>
+           			 </xs:attribute>
+           			  <xs:attribute name="nome" type="xs:string" use="required"/>
+           			  
+           			  <xs:attribute name="tipo" type="xs:integer" use="required"/>
+           			 
+           		</xs:complexType>
+          	  </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>        
+
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+   </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema> 
